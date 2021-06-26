@@ -1,0 +1,13 @@
+#!/bin/openrc-run
+
+name=$RC_SVCNAME
+description="Simple Desktop Display Manager"
+supervisor="supervise-daemon"
+command="/usr/bin/sddm"
+
+
+depend() {
+	after elogind agetty.tty1 plymouth-deactivate plymouth-quit
+	use plymouth-deactivate
+	provide xdm
+}

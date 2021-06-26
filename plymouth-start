@@ -1,0 +1,11 @@
+#!/bin/openrc-run
+
+name=$RC_SVCNAME
+description="Show Plymouth Boot Screen"
+command="/usr/bin/plymouthd"
+command_args="--mode=boot --pid-file=/run/plymouth/pid --attach-to-session"
+pidfile="undefined"
+
+depend() {
+	after dbus
+}

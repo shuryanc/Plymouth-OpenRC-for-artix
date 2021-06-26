@@ -1,0 +1,13 @@
+#!/bin/openrc-run
+
+name=$RC_SVCNAME
+description="SLiM Simple Login Manager"
+supervisor="supervise-daemon"
+command="/usr/bin/slim"
+command_args="-nodaemon"
+
+depend() {
+	after elogind getty@tty1 plymouth-deactivate plymouth-quit 
+	use plymouth-deactivate 
+	provide xdm
+}

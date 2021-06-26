@@ -1,0 +1,5 @@
+#!/bin/bash
+rc-service plymouth-start stop
+/usr/bin/plymouthd --mode=boot --pid-file=/run/plymouth/pid --attach-to-session
+/usr/bin/plymouthd --mode=reboot --attach-to-session
+/usr/bin/plymouth show-splash
