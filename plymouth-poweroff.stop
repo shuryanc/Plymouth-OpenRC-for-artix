@@ -1,3 +1,4 @@
-#!/bin/bash
-/usr/bin/plymouthd --mode=reboot --attach-to-session
+#!/bin/sh
+/usr/bin/plymouthd --mode=shutdown --attach-to-session
 /usr/bin/plymouth show-splash
+

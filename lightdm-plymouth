@@ -1,0 +1,10 @@
+#!/bin/openrc-run
+
+name=$RC_SVCNAME
+description="Light Display Manager"
+supervisor="supervise-daemon"
+command="/usr/bin/lightdm"
+
+depend() {
+	after elogind agetty.tty1 plymouth-quit 
+}

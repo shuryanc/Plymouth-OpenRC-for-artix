@@ -6,6 +6,6 @@ command="/usr/bin/plymouth"
 command_args="quit --retain-splash"
 
 depend() {
-	after local plymouth-start elogind 
+	after local plymouth-start xdm gdm-plymouth
 	before agetty.tty1
 }

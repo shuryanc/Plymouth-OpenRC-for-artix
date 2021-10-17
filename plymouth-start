@@ -7,5 +7,10 @@ command_args="--mode=boot --pid-file=/run/plymouth/pid --attach-to-session"
 pidfile="undefined"
 
 depend() {
-	after udev-trigger udev
+	before udev-trigger udev
 }
+
+stop() {
+	/usr/bin/plymouthd --mode=boot --pid-file=/run/plymouth/pid --attach-to-session
+}
+
