@@ -121,4 +121,7 @@ package() {
 	ln -s "/etc/init.d/gdm" "$pkgdir/etc/init.d/gdm-plymouth"
 
 	install -Dm644 "$pkgdir/usr/share/plymouth/plymouthd.defaults" "$pkgdir/etc/plymouth/plymouthd.conf"
+	rm -r $pkgdir/*.wants
+	chmod 755 $pkgdir/etc/init.d/*
+	chmod 755 $pkgdir/etc/local.d/*
 }
