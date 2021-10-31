@@ -112,7 +112,7 @@ package() {
 	
 	install -Dm644 "$srcdir/plymouth-start" "$pkgdir/etc/init.d/plymouth-start"
 	install -Dm644 "$srcdir/plymouth-quit" "$pkgdir/etc/init.d/plymouth-quit"
-	install -Dm644 "$srcdir/plymouth-poweroff.stop" "$pkgdir/etc/init.d/plymouth-poweroff.stop"
+	install -Dm644 "$srcdir/plymouth-poweroff.stop" "$pkgdir/etc/local.d/plymouth-poweroff.stop"
 	
 	for i in {sddm,lxdm,lightdm,slim}-plymouth; do
 		install -Dm644 "$srcdir/$i" "$pkgdir/etc/init.d/$i"
